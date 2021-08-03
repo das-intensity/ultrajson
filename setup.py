@@ -68,15 +68,15 @@ def local_scheme(version):
 
 
 setup(
-    name="ujson",
-    description="Ultra fast JSON encoder and decoder for Python",
+    name="ujson-segfix",
+    description="Ultra fast JSON encoder and decoder for Python - with segfault fix",
     long_description=README,
     ext_modules=[module1],
-    author="Jonas Tarnstrom",
-    download_url="https://github.com/ultrajson/ultrajson",
+    author="Dr. Nick",
+    download_url="https://github.com/das-intensity/ultrajson",
     platforms=["any"],
-    url="https://github.com/ultrajson/ultrajson",
-    project_urls={"Source": "https://github.com/ultrajson/ultrajson"},
+    url="https://github.com/das-intensity/ultrajson",
+    project_urls={"Source": "https://github.com/das-intensity/ultrajson"},
     use_scm_version={
         "local_scheme": local_scheme,
         "write_to": "python/version.h",
