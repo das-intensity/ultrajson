@@ -825,14 +825,15 @@ PyObject* objToJSON(PyObject* self, PyObject *args, PyObject *kwargs)
   }
 
 
-  dconv_d2s_init(DCONV_D2S_EMIT_TRAILING_DECIMAL_POINT | DCONV_D2S_EMIT_TRAILING_ZERO_AFTER_POINT,
+  encoder.d2s = NULL;
+  dconv_d2s_init(&encoder.d2s, DCONV_D2S_EMIT_TRAILING_DECIMAL_POINT | DCONV_D2S_EMIT_TRAILING_ZERO_AFTER_POINT,
                  csInf, csNan, 'e', DCONV_DECIMAL_IN_SHORTEST_LOW, DCONV_DECIMAL_IN_SHORTEST_HIGH, 0, 0);
 
   PRINTMARK();
   ret = JSON_EncodeObject (oinput, &encoder, buffer, sizeof (buffer));
   PRINTMARK();
 
-  dconv_d2s_free();
+  dconv_d2s_free(&encoder.d2s);
 
   if (PyErr_Occurred())
   {
