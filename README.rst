@@ -37,6 +37,13 @@ To install it just run pip as usual:
 
     $ pip install ujson
 
+=======================
+WARNING - READ THIS NOW
+=======================
+This version of ujson is specifically intended to fix a segmentation fault in ujson until this_ PR is merged (and backported to 3.2)
+
+.. _this: https://github.com/ultrajson/ultrajson/pull/469
+
 ============
 Usage
 ============
